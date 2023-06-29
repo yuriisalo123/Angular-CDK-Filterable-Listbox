@@ -1,0 +1,49 @@
+
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+  }
+</style>
+
+<div class="content" role="main">
+  <p>
+    Description & Requirements:
+  </p>
+  <ul>
+    <li>
+      The goal of this component is to select from a large list of items easily.
+      The user should be able to filter & select various items in a list.
+      They should be able to select all items, or deselect all items as well.
+    </li>
+    <li>
+      The current implementation is based on Angular's CDK Listbox. This allows support for keyboard navigation in the list.
+      This also allows use to style the list box in whatever way we like. If needed, CDK Listbox can be removed.
+    </li>
+    <li>
+      Requirements:<br/>
+      1. Show a list a large list of item, that are selectable (multi-select). <br/>
+      2. Scrolling through the large list needs to be performant. Consider using a virtualized list scroller such as: https://material.angular.io/cdk/scrolling/overview
+      3. All components need to be flexible in styling: can't use pre-styled components. Which is why Angular CDK is the best option.
+      4. Ability to Select All or Deselect All (if all items are selected).
+      5. Ability to Filter through the list and select (read note below)
+      
+      </li>
+      <li>
+        Note on Filtering: This is probably the harder part of the request & where CDK Listbox mighe be a problem. <br/>
+        The filtering should work as follows: All selected items should remain the same. For example, if I select "One", then filter for "Two" & select "two".
+        The current selecttion should be ["one", "two"]. <br/>
+        If you click "select all", on a filtered list, it should add all the items in the currently filtered list to the selection. <br/>
+        If you are filtered, it should show a message on the bottom, with the following "5 items are selected that are not showing in the current selection"
+      </li>
+    
+    </ul>
+</div>
+
+
+<listbox></listbox>
